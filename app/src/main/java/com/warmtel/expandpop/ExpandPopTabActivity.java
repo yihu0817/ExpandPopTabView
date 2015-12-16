@@ -42,30 +42,30 @@ public class ExpandPopTabActivity extends AppCompatActivity {
     }
 
     public void addItem(ExpandPopTabView expandTabView, List<KeyValueBean> lists, String defaultSelect, String defaultShowText) {
-        PopOneListView popViewOne = new PopOneListView(this);
-        popViewOne.setDefaultSelectByValue(defaultSelect);
-//        popViewOne.setDefaultSelectByKey(defaultSelect);
-        popViewOne.setCallBackAndData(lists, expandTabView, new PopOneListView.OnSelectListener() {
+        PopOneListView popOneListView = new PopOneListView(this);
+        popOneListView.setDefaultSelectByValue(defaultSelect);
+       //popViewOne.setDefaultSelectByKey(defaultSelect);
+        popOneListView.setCallBackAndData(lists, expandTabView, new PopOneListView.OnSelectListener() {
             @Override
             public void getValue(String key, String value) {
                 Log.e("tag", "key :" + key + " ,value :" + value);
             }
         });
-        expandTabView.addItemToExpandTab(defaultShowText, popViewOne);
+        expandTabView.addItemToExpandTab(defaultShowText, popOneListView);
     }
 
     public void addItem(ExpandPopTabView expandTabView, List<KeyValueBean> parentLists,
                         List<ArrayList<KeyValueBean>> childrenListLists, String defaultParentSelect, String defaultChildSelect, String defaultShowText) {
-        PopTwoListView distanceView = new PopTwoListView(this);
-        distanceView.setDefaultSelectByValue(defaultParentSelect, defaultChildSelect);
-//        distanceView.setDefaultSelectByKey(defaultParent, defaultChild);
-        distanceView.setCallBackAndData(expandTabView, parentLists, childrenListLists, new PopTwoListView.OnSelectListener() {
+        PopTwoListView popTwoListView = new PopTwoListView(this);
+        popTwoListView.setDefaultSelectByValue(defaultParentSelect, defaultChildSelect);
+        //distanceView.setDefaultSelectByKey(defaultParent, defaultChild);
+        popTwoListView.setCallBackAndData(expandTabView, parentLists, childrenListLists, new PopTwoListView.OnSelectListener() {
             @Override
             public void getValue(String showText, String parentKey, String childrenKey) {
                 Log.e("tag", "showText :" + showText + " ,parentKey :" + parentKey + " ,childrenKey :" + childrenKey);
             }
         });
-        expandTabView.addItemToExpandTab(defaultShowText, distanceView);
+        expandTabView.addItemToExpandTab(defaultShowText, popTwoListView);
     }
 
     @Override
