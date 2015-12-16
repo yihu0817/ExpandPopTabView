@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpandPopTabView">
+        <attr name="tab_toggle_btn_bg" format="reference"></attr>
+        <attr name="tab_toggle_btn_color" format="color"></attr>
+        <attr name="tab_toggle_btn_font_color" format="color"></attr>
+        <attr name="tab_toggle_btn_font_size" format="dimension"></attr>
+        <attr name="tab_pop_bg_color" format="color"></attr>
+    </declare-styleable>
+</resources>
