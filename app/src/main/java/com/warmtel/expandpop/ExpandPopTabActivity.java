@@ -39,6 +39,7 @@ public class ExpandPopTabActivity extends AppCompatActivity {
         addItem(expandTabView, mFavorLists, "默认", "排序");
         addItem(expandTabView, mSortLists, "优惠最多", "优惠");
         addItem(expandTabView, mParentLists, mChildrenListLists, "锦江区", "合江亭", "区域");
+//        addItem(expandTabView, mParentLists, mChildrenListLists, null, null, "区域");
     }
 
     public void addItem(ExpandPopTabView expandTabView, List<KeyValueBean> lists, String defaultSelect, String defaultShowText) {

@@ -159,10 +159,17 @@ public class PopTwoListView extends LinearLayout {
         parentListViewAdapter.setList(_groups);
         childrenItem.addAll(children.get(mParentPosition));
         childListViewAdapter.setList(childrenItem);
-        if(mDefaultParentText != null){
-            setDefaultSelect();
-        }else{
-            setDefaultSelectBykey();
+        if(mDefaultParentText == null && mDefaultParentkey == null){
+            if(children.size() < 0 )
+                return;
+            parentListViewAdapter.setSelectorText(groups.get(0).getValue());
+            childrenItem.addAll(children.get(0));
+        }else {
+            if (mDefaultParentText != null) {
+                setDefaultSelect();
+            } else {
+                setDefaultSelectBykey();
+            }
         }
     }
 
@@ -174,10 +181,18 @@ public class PopTwoListView extends LinearLayout {
         childListViewAdapter.setList(childrenItem);
         mExpandPopTabView = expandPopTabView;
         mOnSelectListener = onSelectListener;
-        if(mDefaultParentText != null){
-            setDefaultSelect();
-        }else{
-            setDefaultSelectBykey();
+
+        if(mDefaultParentText == null && mDefaultParentkey == null){
+            if(children.size() < 0 )
+                return;
+            parentListViewAdapter.setSelectorText(groups.get(0).getValue());
+//            childrenItem.addAll(children.get(0));
+        }else {
+            if (mDefaultParentText != null) {
+                setDefaultSelect();
+            } else {
+                setDefaultSelectBykey();
+            }
         }
     }
 
